@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 4 80% 57%;
+    --primary: 4 80% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 4%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 4 80% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 6% 16%;
+    --input: 240 6% 16%;
+    --ring: 4 80% 57%;
+    --primary: 4 80% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 6% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 240 6% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 4 80% 57%;
+    --destructive-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border;
+  }
+  .gradient-brand {
+    background: linear-gradient(135deg, #e84d3d, #f97316);
+  }
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #e84d3d, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .ring-brand {
+    @apply ring-2 ring-[#e84d3d]/30 ring-offset-2 ring-offset-background;
+  }
+}
