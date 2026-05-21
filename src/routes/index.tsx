@@ -21,7 +21,6 @@ import {
   Sparkles,
   Loader2,
 } from "lucide-react";
-import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leads.functions";
 import { Toaster } from "@/components/ui/sonner";
@@ -473,7 +472,6 @@ function FAQ() {
 function CotacaoForm() {
   const [loading, setLoading] = useState(false);
   const formStartedRef = useRef(false);
-  const submit = useServerFn(submitLead);
 
   const {
     register,
@@ -497,7 +495,7 @@ function CotacaoForm() {
     const waWindow = window.open("about:blank", "_blank");
 
     try {
-      await submit({ data: values });
+      await submitLead(values);
 
       const linhas = ["Olá, gostaria de solicitar uma cotação da Universo AGV.", "", `Nome: ${values.nome}`];
       if (values.email && values.email.length > 0) linhas.push(`Email: ${values.email}`);
