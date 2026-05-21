@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_SUPABASE_URL = "https://dslsdxvxaaxjxlxzzacr.supabase.co"
+  VITE_SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbHNkeHZ4YWF4anhseHp6YWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzQ4ODUsImV4cCI6MjA5NDcxMDg4NX0.Fx5Ufw7p43g3bZXz3Ut1rp5iy2yIkN3YrJy3FWgOf9c"
+  SUPABASE_URL = "https://dslsdxvxaaxjxlxzzacr.supabase.co"
+  SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzbHNkeHZ4YWF4anhseHp6YWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzQ4ODUsImV4cCI6MjA5NDcxMDg4NX0.Fx5Ufw7p43g3bZXz3Ut1rp5iy2yIkN3YrJy3FWgOf9c"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[functions]
+  directory = ".output/server"
+  node_bundler = "esbuild"
